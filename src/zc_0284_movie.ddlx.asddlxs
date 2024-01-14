@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeNamePlural: 'Movies',
+  title.value: 'Title',
+  description.value: 'PublishingYear',
+  imageUrl: 'ImageUrl'
+
+  }
+
+annotate view ZC_0284_MOVIE with
+{
+
+
+  @UI.facet: [
+  { position: 10, label: 'Movie Details', targetQualifier: 'Details', type: #FIELDGROUP_REFERENCE },
+  { position: 20, label: 'Administrative Data', targetQualifier: 'Data', type: #FIELDGROUP_REFERENCE },
+  { position: 30, label: 'Ratings', type: #LINEITEM_REFERENCE, targetElement: '_Ratings' }
+    ]
+
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 10 }]
+  Title;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 20 }]
+  Genre;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 30 }]
+  PublishingYear;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 40 }]
+  RuntimeInMin;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 50 }]
+  CreatedBy;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 60 }]
+  CreatedAt;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 70 }]
+  LastChangedBy;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 80 }]
+  LastChangedAt;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 90 }]
+  MovieUuid;
+
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 50 }]
+  ImageUrl;
+
+  @UI.lineItem: [{ position: 50 }]
+  Length;
+
+
+  @UI.lineItem: [{ position: 60, criticality: 'RatingCriticality',
+        criticalityRepresentation: #WITHOUT_ICON }]
+  AverageRating;
+
+
+
+
+}
